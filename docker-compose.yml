@@ -1,0 +1,53 @@
+version: "3"
+networks:
+  pimcore-network:
+services:
+  db:
+    container_name: pimcore-db
+    image: mysql:5.7
+    restart: unless-stopped
+    ports:
+      - 32776:3306
+    networks:
+      - pimcore-network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_DATABASE: pimcore
+    command:
+      [
+        "mysqld",
+        "--character-set-server=utf8mb4",
+        "--collation-server=utf8mb4_unicode_ci",
+      ]
+  web:
+    container_name: pimcore
+    build: ./dockerfiles/web
+    restart: unless-stopped
+    ports:
+      - 32777:80
+    networks:
+      - pimcore-network
+    depends_on:
+      - db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: root
+    volumes:
+      - /home/docker/projects/docker/website:/var/www/html/website
+  # phpmyadmin:
+  #   container_name: phpmyadmin
+  #   image: phpmyadmin/phpmyadmin
+  #   restart: unless-stopped
+  #   networks:
+  #     - pimcore-network
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 32778:80
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_PASSWORD: root
+  #     PMA_HOST: db
