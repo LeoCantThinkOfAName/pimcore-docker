@@ -1,3 +1,32 @@
+html,
 body {
-  background: red;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: rgb(109, 190, 62);
+  font-family: sans-serif;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  h1 {
+    animation: rotate 3s linear 0s infinite forwards;
+  }
 }
