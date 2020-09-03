@@ -36,7 +36,7 @@ services:
       MYSQL_PASSWORD: root
       MYSQL_USER: root
     volumes:
-      - /home/docker/projects/docker/website:/var/www/html/website
+      - {MOUNTPOINT}:/var/www/html/website
   # phpmyadmin:
   #   container_name: phpmyadmin
   #   image: phpmyadmin/phpmyadmin
