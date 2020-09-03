@@ -1,0 +1,13 @@
+#pimcore_panel_tabs-body {
+    background-image: url(/pimcore/static6/img/logo-lemon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#pimcore_panel_tabs>.x-tab-bar {
+    background: #222222;
+    background-image: url(/pimcore/static6/img/logo-lemon.png);
+    background-repeat: no-repeat;
+    background-position: right 22px top 4px;
+    background-size: 80px;
+}
