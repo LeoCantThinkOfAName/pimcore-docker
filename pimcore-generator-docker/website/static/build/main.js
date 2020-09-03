@@ -128,8 +128,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _hel
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /e/Leo/docker/pimcore-generator-docker/website/static/js/main.js */"./website/static/js/main.js");
-module.exports = __webpack_require__(/*! /e/Leo/docker/pimcore-generator-docker/website/static/css/main.scss */"./website/static/css/main.scss");
+__webpack_require__(/*! /e/Leo/pimcore-generator/pimcore-test/website/static/js/main.js */"./website/static/js/main.js");
+module.exports = __webpack_require__(/*! /e/Leo/pimcore-generator/pimcore-test/website/static/css/main.scss */"./website/static/css/main.scss");
 
 
 /***/ })
